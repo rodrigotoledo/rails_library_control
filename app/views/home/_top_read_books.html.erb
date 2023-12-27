@@ -1,0 +1,5 @@
+<ul class="list-disc list-inside">
+  <% Book.top_read_books.each do |book| %>
+    <li><span class='font-bold'><%= book['title'] %></span> (Total: <%= book['count'] %>)</li>
+  <% end %>
+</ul>

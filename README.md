@@ -18,6 +18,5 @@ The project also includes a reading simulation feature, also using rake task whe
 
 ---
 
-**Contribute to this project:** [Link to GitHub](https://github.com/rodrigotoledo/your-project)
-
-**License:** This project is licensed under the XYZ License - see the [LICENSE.md](LICENSE.md) file for details.
+**Contribute to this project:** [Link to GitHub](https://github.com/rodrigotoledo/rails_library_control)
+**If you want to contribute for the channel, please make a pix to:** `3ee71e15-dfd7-4a93-9cb3-e5bc7fda5825`

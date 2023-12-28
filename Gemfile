@@ -62,3 +62,6 @@ group :development do
 end
 
 gem 'whenever', require: false
+gem "stimulus_reflex", "= 3.5.0.rc3"
+
+gem "redis-session-store", "~> 0.11.5"

@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
-  after_save :broadcast_updates
+  after_create :broadcast_updates
+  after_update :broadcast_updates
   after_destroy :broadcast_updates
 
   def self.total_unread
@@ -15,6 +16,21 @@ class Book < ApplicationRecord
       SELECT title, COUNT(*) as count
       FROM books
       WHERE finished = true
+      GROUP BY title
+      ORDER BY count DESC
+      LIMIT 5
+    SQL
+
+    result = ActiveRecord::Base.connection.exec_query(sql)
+
+    result.to_a
+  end
+
+  def self.top_unread_books
+    sql = <<~SQL
+      SELECT title, COUNT(*) as count
+      FROM books
+      WHERE finished = false
       GROUP BY title
       ORDER BY count DESC
       LIMIT 5
@@ -44,6 +60,12 @@ class Book < ApplicationRecord
       'top_read_books',
       target: "top_read_books",
       partial: 'home/top_read_books'
+    )
+
+    broadcast_update_to(
+      'top_unread_books',
+      target: "top_unread_books",
+      partial: 'home/top_unread_books'
     )
   end
 end

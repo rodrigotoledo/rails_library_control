@@ -31,6 +31,11 @@ If you need stop and clear your crontab run
 
 Big part of the projects needs to have an api to implement access to the resources. Here we implement the API of importing resources of Books using Postman.
 
+## StimulusReflex
+
+With StimulusReflex class we can dispatch requests to background classes and update the frontend without refreshing the page.
+
+
 ---
 
 **Contribute to this project:** [Link to GitHub](https://github.com/rodrigotoledo/rails_library_control)

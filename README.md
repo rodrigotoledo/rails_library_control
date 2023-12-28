@@ -16,6 +16,21 @@ One of the standout features of this project is the simulation of book imports. 
 
 The project also includes a reading simulation feature, also using rake task where can mark books as read. This enables them to track their reading progress for each book in their library. The seamless integration with Hotwire ensures that reading updates are instantaneous and visible to all users.
 
+## Running the background jobs
+
+Maybe you want to run the background jobs, so we will run will use the gem `whenever` with a little trick. It's because maybe your user can't update the crontab so you need run with
+
+`bundle exec whenever -i --set 'environment=development'`
+
+Of course if you need run in production environment, just change to production
+If you need stop and clear your crontab run
+
+`bundle exec whenever --clear-crontab`
+
+## API
+
+Big part of the projects needs to have an api to implement access to the resources. Here we implement the API of importing resources of Books using Postman.
+
 ---
 
 **Contribute to this project:** [Link to GitHub](https://github.com/rodrigotoledo/rails_library_control)
